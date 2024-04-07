@@ -16,8 +16,16 @@ const CoffeeItem = (props: Props) => {
 
   return (
     <div className="bg-gray-300 rounded flex flex-col h-full">
-      <div className="w-full h-40 flex justify-center items-center">
-        <i className="ri-cup-line text-7xl"></i>
+      <div className="w-full h-[250px] flex justify-center items-center">
+        {props.coffee.image ? (
+          <img
+            src={props.coffee.image}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <i className="ri-cup-line text-7xl"></i>
+        )}
       </div>
       <div className="p-4 flex-1 flex justify-between flex-col">
         <div className="">

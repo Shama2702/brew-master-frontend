@@ -14,6 +14,7 @@ interface IFormInput {
   name: string;
   description: string;
   price: number;
+  image: string;
 }
 
 type Props = {
@@ -31,6 +32,7 @@ const CoffeeForm = (props: Props) => {
       props.initialData.description &&
         setValue("description", props.initialData.description);
       setValue("price", props.initialData.price);
+      setValue("image", props.initialData.image || "");
     }
   }, [props.initialData]);
 
@@ -69,6 +71,14 @@ const CoffeeForm = (props: Props) => {
               {...register("name")}
               className="bg-gray-200 h-10 mt-1 px-2"
               required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="">Image</label>
+            <input
+              type="text"
+              {...register("image")}
+              className="bg-gray-200 h-10 mt-1 px-2"
             />
           </div>
           <div className="flex flex-col">
