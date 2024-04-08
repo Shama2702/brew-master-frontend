@@ -2,6 +2,7 @@
 import React from "react";
 import { ICoffee } from "../../types/coffee.type";
 import useCartStore from "@/store/cartStore";
+import toast from "react-hot-toast";
 
 type Props = {
   coffee: ICoffee;
@@ -12,6 +13,7 @@ const CoffeeItem = (props: Props) => {
 
   const onAddToCart = () => {
     addToCart(props.coffee, 1);
+    toast.success("Added to cart");
   };
 
   return (
